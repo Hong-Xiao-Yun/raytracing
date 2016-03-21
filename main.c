@@ -69,29 +69,29 @@ int main()
    // printf(" getchar()\n");
     // getchar();
     
-    int err;
+    /*int err;
     int k=0;
     if (pthread_mutex_init(&lock, NULL) != 0)
     {
         printf("\n mutex init failed\n");
         return 1;
-    }
+    }*/
     // while(k < 1)
     // {
-         // pthread_create(&(tid[0]), NULL, &raytracing, threadS[0]);
+         pthread_create(&(tid[0]), NULL, &raytracing, threadS[0]);
          pthread_create(&(tid[1]), NULL, &raytracing, threadS[1]);
-          // err = pthread_create(&(tid[2]), NULL, &raytracing, threadS[2]);
-           // err = pthread_create(&(tid[3]), NULL, &raytracing, threadS[3]);
+          pthread_create(&(tid[2]), NULL, &raytracing, threadS[2]);
+        pthread_create(&(tid[3]), NULL, &raytracing, threadS[3]);
         // if (err != 0)
             // printf("\ncan't create thread :[%s]", strerror(err));
         // k++;
     // }
 
-    // pthread_join(tid[0], NULL);
+    pthread_join(tid[0], NULL);
     pthread_join(tid[1], NULL);
-    // pthread_join(tid[2], NULL);
-    // pthread_join(tid[3], NULL);
-    pthread_mutex_destroy(&lock);
+    pthread_join(tid[2], NULL);
+    pthread_join(tid[3], NULL);
+    // pthread_mutex_destroy(&lock);
     
 
     /*raytracing(pixels, background, rectangulars, spheres, lights, &view, 0, ROWS/2,0,COLS/2,ROWS,COLS);

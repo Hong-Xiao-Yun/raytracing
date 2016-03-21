@@ -513,11 +513,12 @@ void *raytracing(void * aegp)
             }
         }
     }
+     // pthread_exit(NULL);
     // printf("startheight%d\n",startheight);
     // printf("endheight%d\n",endheight );
     // printf("startwidth%d\n", startwidth);
     //printf("endwidth%d\n",endwidth);
-    return NULL;
+   return NULL;
     
     
 }
